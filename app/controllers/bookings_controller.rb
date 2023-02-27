@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.club = @club
     @booking.user = current_user
-    if @club.save
+    if @booking.save
       redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
