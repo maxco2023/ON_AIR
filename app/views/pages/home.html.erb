@@ -2,10 +2,12 @@
 
 <% @clubs.each do |club| %>
   <p><%= club.name %></p>
+  <p><%= club.address %></p>
   <p><%= club.description %></p>
   <p>Numéro de téléphone : <%= club.phone_number %></p>
+  <p>Catégorie : <%= club.category %></p>
   <p>Capacité : <%= club.capacity %></p>
-  <p>Prix : <%= club.hour_price %></p>
+  <p>Prix : <%= club.hour_price %> €</p>
 <% end %>
 
 <%# footer %>
