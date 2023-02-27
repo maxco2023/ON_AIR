@@ -4,11 +4,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @clubs = Club.all
-    @bookings = Booking.all
-  end
-
-  def club_params
-    params.require(:clubs).permit(:name, :description, :phone_number, :type, :capacity, :hour_price, :user_id)
+    @user = User.find(params[user_id])
+    @club.user = @user
+    @clubs = Club.where(:user_id, @user)
+    @booking.user = @user
+    @bookings = Booking.where(:user_id, @user)
   end
 end

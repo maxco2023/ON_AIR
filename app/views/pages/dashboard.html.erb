@@ -1,0 +1,23 @@
+<h1>Profil</h1>
+<p>Photo de profil</p>
+<br>
+<p>Informations</p>
+<br>
+
+<h2>Mes clubs</h2>
+<%# ajouter le if si c'est un owner uniquement %>
+<% @clubs.each do |club| %>
+  <p><%= club.name %></p>
+  <p><%= club.description %></p>
+  <p>Numéro de téléphone : <%= club.phone_number %></p>
+  <p>Capacité : <%= club.capacity %></p>
+  <p>Prix : <%= club.hour_price %></p>
+<% end %>
+<br>
+
+<h2>Mes bookings</h2>
+<% @bookings.each do |booking| %>
+  <p>Début de la réservation : <%= booking.start_date %></p>
+  <p>Fin de la réservation : <%= booking.end_date %></p>
+  <p>Statut de la réservation : <%= booking.accepted %></p>
+<% end %>
