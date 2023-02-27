@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# navbar %>
+
+<% @clubs.each do |club| %>
+  <p><%= club.name %></p>
+  <p><%= club.description %></p>
+  <p>Numéro de téléphone : <%= club.phone_number %></p>
+  <p>Capacité : <%= club.capacity %></p>
+  <p>Prix : <%= club.hour_price %></p>
+<% end %>
+
+<%# footer %>
