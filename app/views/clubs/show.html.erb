@@ -6,3 +6,6 @@
 
 <%= link_to "Edit this club", edit_club_path %>
 <%= link_to "Delete this club", club_path(@club), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+<%# Ajout %>
+<%= link_to "Ask for Booking", new_club_booking_path(@club) %>
