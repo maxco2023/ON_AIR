@@ -2,6 +2,8 @@ class ClubsController < ApplicationController
   before_action :set_club, only: %i[show edit update destroy]
 
   def show
+    @club = Club.find(params[:id])
+    @booking = Booking.new
     authorize @club
   end
 
