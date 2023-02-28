@@ -1,7 +1,6 @@
 <%# navbar %>
 
 <% @clubs.each do |club| %>
-
   <% if club.photo.attached? %>
     <%= cl_image_tag(club.photo.key, height: 300, width: 400, crop: :fill) %>
   <% else %>

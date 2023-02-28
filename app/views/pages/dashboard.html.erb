@@ -1,50 +1,23 @@
 <h1>Profil</h1>
-<<<<<<< HEAD
-<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 
-<br>
-<p>Informations</p>
-<br>
-
-<h2>Mes clubs</h2>
-<%# ajouter le if si c'est un owner uniquement %>
-<% @clubs.each do |club| %>
-  <p><%= club.name %></p>
-  <p><%= club.address %></p>
-  <p><%= club.description %></p>
-  <p>Numéro de téléphone : <%= club.phone_number %></p>
-  <p>Catégorie : <%= club.category %></p>
-  <p>Capacité : <%= club.capacity %></p>
-  <p>Prix : <%= club.hour_price %> €</p>
-  <%= link_to "Details of this club", club_path(club) %>
-=======
 <% if current_user.photo.attached? %>
   <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>
   <img src="">
->>>>>>> d804121b930e5be6ecdb9a1d399dab7bed37cd88
 <% end %>
+<p><%= current_user.biography %></p>
+<%= link_to "Edit my profile", edit_user_registration_path %>
 
 <br>
-
-<<<<<<< HEAD
-<h2>Mes bookings</h2>
-<% @bookings.each do |booking| %>
-  <h3><%= booking.club.name %></h3>
-  <p>Début de la réservation : <%= booking.start_date %></p>
-  <p>Fin de la réservation : <%= booking.end_date %></p>
-  <p>Statut de la réservation : <%= booking.accepted %></p>
-  <%= link_to "delete", bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <%= link_to "accept (only for owners)", booking_accepted_path(booking) %>
-<% end %>
-
-<%# ajouter les bookings des clubs liés à l'owner avec un lien vers le profil du stand-upper %>
-=======
 <div>
   <% if current_user.clubs.count != 0 %>
     <h2>Mes clubs</h2>
-    <%# ajouter le if si c'est un owner uniquement %>
     <% @clubs.each do |club| %>
+      <% if club.photo.attached? %>
+        <%= cl_image_tag(club.photo.key, height: 300, width: 400, crop: :fill) %>
+      <% else %>
+        <img src="">
+      <% end %>
       <p><%= club.name %></p>
       <p><%= club.address %></p>
       <p><%= club.description %></p>
@@ -52,6 +25,7 @@
       <p>Catégorie : <%= club.category %></p>
       <p>Capacité : <%= club.capacity %></p>
       <p>Prix : <%= club.hour_price %> €</p>
+      <%= link_to "Details of this club", club_path(club) %>
     <% end %>
   <% end %>
 </div>
@@ -76,8 +50,12 @@
     <% current_user.clubs.each do |club| %>
       <% club.bookings.each do |booking| %>
       <h3><%= booking.club.name %></h3>
-      <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-      <%# <%= link_to "#{booking.user.name}",  %>
+      <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", user_path(booking.user) %>
+      <% if booking.user.photo.attached? %>
+        <%= cl_image_tag(booking.user.photo.key, height: 300, width: 400, crop: :fill) %>
+      <% else %>
+        <img src="">
+      <% end %>
       <p>Début de la réservation : <%= booking.start_date %></p>
       <p>Fin de la réservation : <%= booking.end_date %></p>
       <p>Statut de la réservation : <%= booking.accepted %></p>
@@ -87,4 +65,3 @@
     <% end %>
   <% end %>
 </div>
->>>>>>> d804121b930e5be6ecdb9a1d399dab7bed37cd88
