@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         
   has_many :clubs, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
@@ -13,4 +12,5 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
   validates :biography, presence: true, length: { minimum: 50 }
 
+  has_one_attached :photo
 end
