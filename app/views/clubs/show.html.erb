@@ -1,7 +1,7 @@
 <% if @club.photo.attached? %>
   <%= cl_image_tag(@club.photo.key, height: 300, width: 400, crop: :fill) %>
 <% else %>
-<img src="">
+  <img src="">
 <% end %>
 <h2><%= @club.name %></h2>
 <p><%= @club.category %></p>
