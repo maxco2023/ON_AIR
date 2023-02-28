@@ -6,7 +6,7 @@ class Club < ApplicationRecord
   validates :address, presence: true, uniqueness: { scope: :name }
   validates :description, presence: true, length: { minimum: 50 }
   validates :phone_number, presence: true
-  validates :type, presence: true
+  validates :category, presence: true
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :hour_price, presence: true, numericality: true
 
