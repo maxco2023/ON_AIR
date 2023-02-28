@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      render :new, status: :unprocessable_entity
+      render 'clubs/show', status: :unprocessable_entity
     end
   end
 
