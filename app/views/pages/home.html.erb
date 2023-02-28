@@ -1,6 +1,11 @@
 <%# navbar %>
 
 <% @clubs.each do |club| %>
+  <% if club.photo.attached? %>
+    <%= cl_image_tag(club.photo.key, height: 300, width: 400, crop: :fill) %>
+  <% else %>
+    <img src="">
+  <% end %>
   <p><%= club.name %></p>
   <p><%= club.address %></p>
   <p><%= club.description %></p>
@@ -8,7 +13,7 @@
   <p>Catégorie : <%= club.category %></p>
   <p>Capacité : <%= club.capacity %></p>
   <p>Prix : <%= club.hour_price %> €</p>
-  <%= link_to "Details of this club", club_path(club)  %>
+  <%= link_to "Details of this club", club_path(club) %>
 <% end %>
 
 <%# footer %>
