@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'bookings/:id', to: 'bookings#accepted', as: :booking_accepted
   delete 'bookings/:id', to: 'bookings#destroy', as: :bookings_delete
   get 'dashboard', to: 'pages#dashboard'
+  get 'users/:id', to: 'users#show', as: :user
 end
