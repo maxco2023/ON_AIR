@@ -1,5 +1,4 @@
 <h1>Profil</h1>
-<p>Photo de profil</p>
 <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 
 <br>
@@ -16,6 +15,7 @@
   <p>Catégorie : <%= club.category %></p>
   <p>Capacité : <%= club.capacity %></p>
   <p>Prix : <%= club.hour_price %> €</p>
+  <%= link_to "Details of this club", club_path(club) %>
 <% end %>
 <br>
 
@@ -28,3 +28,5 @@
   <%= link_to "delete", bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <%= link_to "accept (only for owners)", booking_accepted_path(booking) %>
 <% end %>
+
+<%# ajouter les bookings des clubs liés à l'owner avec un lien vers le profil du stand-upper %>
