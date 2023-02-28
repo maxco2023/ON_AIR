@@ -36,7 +36,7 @@ class ClubsController < ApplicationController
   private
 
   def club_params
-    params.require(:club).permit(:name, :address, :description, :phone_number, :category, :capacity, :hour_price, :user_id)
+    params.require(:club).permit(:name, :address, :description, :phone_number, :category, :capacity, :hour_price)
   end
 
   def set_club
