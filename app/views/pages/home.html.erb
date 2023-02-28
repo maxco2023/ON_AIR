@@ -1,6 +1,9 @@
 <%# navbar %>
 
 <% @clubs.each do |club| %>
+<%# a enlever %>
+  <h2><%= club.user.email %></h2>
+<%# a enlever %>
   <p><%= club.name %></p>
   <p><%= club.address %></p>
   <p><%= club.description %></p>

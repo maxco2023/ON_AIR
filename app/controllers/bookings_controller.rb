@@ -4,12 +4,14 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.club = @club
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to dashboard_path
     else
@@ -18,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to dashboard_path
   end
