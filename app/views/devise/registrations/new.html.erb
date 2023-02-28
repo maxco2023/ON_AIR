@@ -5,10 +5,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :phone_number %>
-  <%= f.input :biography, hint: "50 characters minimum" %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :phone_number %>
+    <%= f.input :biography, hint: "50 characters minimum" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
