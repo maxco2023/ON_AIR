@@ -19,6 +19,7 @@
 
 <h2>Mes bookings</h2>
 <% @bookings.each do |booking| %>
+  <h3><%= booking.club.name %></h3>
   <p>Début de la réservation : <%= booking.start_date %></p>
   <p>Fin de la réservation : <%= booking.end_date %></p>
   <p>Statut de la réservation : <%= booking.accepted %></p>
