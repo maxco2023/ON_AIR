@@ -10,3 +10,16 @@
 
 <%# Ajout %>
 <%= link_to "Ask for Booking", new_club_booking_path(@club) %>
+
+<br>
+
+<%= month_calendar(attribute: :start_date, end_attribute: :end_date, events: @club.bookings) do |date, bookings| %>
+    <%= date.day %>
+
+    <% bookings.each do |booking| %>
+      <div>
+        <%= booking.club.name %>
+      </div>
+    <% end %>
+<% end %>
+
