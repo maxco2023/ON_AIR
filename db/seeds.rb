@@ -41,3 +41,39 @@ club2 = Club.new(
   user_id: user2.id
 )
 club2.save!
+
+user3 = User.new(
+  first_name: "amelie",
+  last_name: "berthier",
+  phone_number: "0615648389",
+  biography: "blablablablabablablabalbalabalbalabalablabalbalbalabalbalabalbalablabalbalabalbalbaalbalabalbalabalba",
+  email: "amelie@gmail.com",
+  password: "123456"
+)
+user3.save!
+
+user4 = User.new(
+  first_name: "bastien",
+  last_name: "lafont",
+  phone_number: "0615348389",
+  biography: "blablablablabablablabalbalabalbalabalablabalbalbalabalbalabalbalablabalbalabalbalbaalbalabalbalabalba",
+  email: "bastien@gmail.com",
+  password: "123456"
+)
+user4.save!
+
+booking1 = Booking.new(
+  start_date: "12/05/2023",
+  end_date: "13/05/2023",
+  club_id: club1.id,
+  user_id: user3.id
+)
+booking1.save!
+
+booking2 = Booking.new(
+  start_date: "16/05/2023",
+  end_date: "17/05/2023",
+  club_id: club2.id,
+  user_id: user4.id
+)
+booking2.save!
