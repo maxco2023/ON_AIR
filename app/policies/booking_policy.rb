@@ -13,4 +13,8 @@ class BookingPolicy < ApplicationPolicy
   def destroy?
     record.user == user || record.club.user == user
   end
+
+  def accepted?
+    record.club.user == user
+  end
 end
