@@ -22,4 +22,6 @@
   <p>Début de la réservation : <%= booking.start_date %></p>
   <p>Fin de la réservation : <%= booking.end_date %></p>
   <p>Statut de la réservation : <%= booking.accepted %></p>
+  <%= link_to "delete", bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "accept (only for owners)", booking_accepted_path(booking) %>
 <% end %>

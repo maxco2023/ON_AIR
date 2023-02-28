@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :clubs, only: %i[new create show edit update destroy] do
     resources :bookings, only: %i[new create update]
   end
-  patch 'bookings/:id', to: 'bookings#accepted!'
-  delete 'bookings/:id', to: 'bookings#destroy'
+  get 'bookings/:id', to: 'bookings#accepted!', as: :booking_accepted
+  delete 'bookings/:id', to: 'bookings#destroy', as: :bookings_delete
   get 'dashboard', to: 'pages#dashboard'
 end
