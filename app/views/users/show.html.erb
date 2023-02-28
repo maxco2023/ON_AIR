@@ -1,0 +1,11 @@
+<% if @user.photo.attached? %>
+  <%= cl_image_tag(@user.photo.key, height: 300, width: 400, crop: :fill) %>
+<% else %>
+<img src="">
+<% end %>
+<h2><%= @user.first_name %></h2>
+<p><%= @user.last_name %></p>
+<p><%= @user.email %></p>
+<p><%= @user.phone_number %></p>
+<p><%= @user.biography %></p>
+<p><%= @user.social_network_url %></p>
