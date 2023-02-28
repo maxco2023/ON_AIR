@@ -4,10 +4,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = User.find(params[user_id])
-    @club.user = @user
-    @clubs = Club.where(:user_id, @user)
-    @booking.user = @user
-    @bookings = Booking.where(:user_id, @user)
+    # pas besoin de la première ligne ? mettre plutôt juste @club.user = current_user ?
+    @clubs = Club.where(:user, current_user)
+    @bookings = Booking.where(:user, current_user)
   end
 end
