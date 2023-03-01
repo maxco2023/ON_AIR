@@ -6,7 +6,7 @@
         <% if club.photo.attached? %>
           <%= cl_image_tag(club.photo.key, height: 200, width: 380, crop: :fill) %>
         <% else %>
-          <img src="">
+          <div class="sans-photo"><%= club.name %></div>
         <% end %>
 
         <div class="d-flex flex-row justify-content-between align-items-center mt-2">
