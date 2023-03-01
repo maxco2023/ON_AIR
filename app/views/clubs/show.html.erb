@@ -1,4 +1,4 @@
-<div class="container club-info">
+<div class="club-info p-3">
   <div class="d-flex flex-row justify-content-between align-items-center">
     <h1><%= @club.name %> - <%= @club.category %></h1>
     <div class="d-flex flex-row justify-content-between align-items-center">
@@ -15,7 +15,7 @@
 
   <div class="d-flex flex-row justify-content-between align-items-center mt-4">
     <% if @club.photo.attached? %>
-      <%= cl_image_tag(@club.photo.key, height: 200, width: 300, crop: :fill, :class=>"rounded-4 shadow") %>
+      <%= cl_image_tag(@club.photo.key, height: 300, width: 400, crop: :fill, :class=>"rounded-4 shadow") %>
     <% else %>
       <div class="sans-photo rounded-4 shadow"><%= @club.name %></div>
     <% end %>
@@ -25,24 +25,27 @@
       <p class="mt-3"><%= @club.description %></p>
     </div>
   </div>
+</div>
 
-  <br>
+<div class="d-flex flex-row align-items-center justify-content-evenly">
+  <div class="calendar-car">
+    <%= month_calendar(attribute: :start_date, end_attribute: :end_date, events: @club.bookings) do |date, bookings| %>
+        <%= date.day %>
 
-  <%= month_calendar(attribute: :start_date, end_attribute: :end_date, events: @club.bookings) do |date, bookings| %>
-      <%= date.day %>
+        <% bookings.each do |booking| %>
+          <div>
+            <%= "" %>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 
-      <% bookings.each do |booking| %>
-        <div>
-          <%= booking.club.name %>
-        </div>
-      <% end %>
-  <% end %>
-
-  <h1>Nouveau booking:</h1>
-
-  <%= simple_form_for [@club, @booking], data: { controller: 'flatpickr' } do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
-    <%= f.submit %>
-  <% end %>
+  <div>
+    <h1>Nouveau booking:</h1>
+    <%= simple_form_for [@club, @booking], data: { controller: 'flatpickr' } do |f| %>
+      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
