@@ -1,0 +1,22 @@
+.club-info {
+  margin-top: 20px;
+
+  .details {
+    background-color: white;
+    width : 450px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px rgba(50, 50, 50, .1);
+  }
+
+  .fa-solid {
+    color: black;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
+}

@@ -1,15 +1,23 @@
-<% if @user.photo.attached? %>
-  <%= cl_image_tag(@user.photo.key, height: 300, width: 400, crop: :fill) %>
-<% else %>
-<img src="">
-<% end %>
-<h2><%= @user.first_name %></h2>
-<p><%= @user.last_name %></p>
-<p><%= @user.biography %></p>
-<% if current_user.clubs.count != 0 || @user == current_user %>
-  <p><%= @user.email %></p>
-  <p><%= @user.phone_number %></p>
-<% end %>
-<p><%= @user.social_network_url %></p>
+     <div class="container"
+     > <div class="card-white">
+          <% if @user.photo.attached? %>
+            <div class="profile_picture"><%= cl_image_tag(@user.photo.key, :class => "rounded-circle") %></div>
+          <% else %>
+            <div class="profile_picture"><img src=""></div>
+          <% end %>
+        <h1><%= @user.first_name.upcase %> | <%= @user.last_name.upcase %></h1>
+          <% if current_user.clubs.count != 0 || @user == current_user %>
+            <div><i class="fa-solid fa-envelope"></i> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></div>
+            <div><i class="fa-solid fa-phone"></i> | <%= @user.phone_number %></div>
+            <div><a class="button button-facebook" role="button" href="(<% @user.social_network_url %>)" target="_blank"><span class="text">My Social Profile</span><span>My Social profile</span></a></div>
+          <% end %>
+      </div>
 
-<%= link_to "Go back to my dashboard", dashboard_path %>
+      <div class="card-white">
+	      <h2> Biography</h2>
+        <div class="card-product">
+          <div class="biography"><%= @user.biography %></div>
+        </div>
+      </div>
+
+<div class="dash"><%= link_to "Go back to my dashboard", dashboard_path, class:"btn btn-ghost2" %></div>
