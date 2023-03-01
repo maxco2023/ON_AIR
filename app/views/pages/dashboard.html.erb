@@ -107,7 +107,11 @@
 
             <div class="col-2 d-flex flex-column align-items-center justify-content-between">
               <%= link_to booking_accepted_path(booking) do%>
-                <i class="fa-solid fa-check"></i>
+                <% if booking.accepted %>
+                  <i class="fa-solid fa-check validated"></i>
+                <% else %>
+                  <i class="fa-solid fa-check unvalidated"></i>
+                <% end %>
               <% end %>
               <%= link_to bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
                 <i class="fa-solid fa-trash"></i>

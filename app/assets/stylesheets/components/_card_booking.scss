@@ -12,6 +12,11 @@
 
   a {
     text-decoration: none;
+    color: $pcolor3;
+  }
+
+  a:hover {
+    color: $pcolor2;
   }
 
   i {
@@ -19,9 +24,18 @@
   }
 
   .fa-check {
-    font-size: 30px;
-    background-color: rgb(210, 210, 210);
+    font-size: 40px;
     border-radius: 50%;
+  }
+
+  .unvalidated {
+    color:grey;
+    background-color: rgba(197, 197, 197, 0.167);
+  }
+
+  .validated {
+    color:rgb(15, 165, 15);
+    background-color: rgba(197, 197, 197, 0.556);
   }
 
 }
