@@ -1,19 +1,48 @@
-<%# navbar %>
 
-<% @clubs.each do |club| %>
-  <% if club.photo.attached? %>
-    <%= cl_image_tag(club.photo.key, height: 300, width: 400, crop: :fill) %>
-  <% else %>
-    <img src="">
+<div class="no-underline-on-link mt-2">
+  <% @clubs.each do |club| %>
+    <%= link_to club_path(club) do%>
+      <div class="card-club shadow mt-3 mb-3">
+        <% if club.photo.attached? %>
+          <%= cl_image_tag(club.photo.key, height: 200, width: 380, crop: :fill) %>
+        <% else %>
+          <div class="sans-photo"><%= club.name %></div>
+        <% end %>
+
+        <div class="d-flex flex-row justify-content-between align-items-center mt-2">
+          <h2><%= club.name %></h2>
+          <h3><%= club.category %></h3>
+        </div>
+
+        <div class="d-flex flew-row align-items-center justify-content-between mt-1">
+          <div class="d-flex flex-row align-items-center">
+            <p class="me-2"><strong><%= club.capacity %></strong></p>
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <div class="d-flex flex-row align-items-center">
+            <p><strong><%= club.hour_price.round %>€</strong></p>
+          </div>
+        </div>
+
+        <div class="d-flex flew-row align-items-center w-100 text-truncate mt-2">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="ms-2"><%= club.address %></p>
+        </div>
+
+
+
+        <div class="d-flex flew-row align-items-center justify-content-start">
+          <div class="d-flex flex-row align-items-center">
+            <i class="fa-solid fa-phone"></i>
+            <p class="ms-2 me-4"><%= club.phone_number %></p>
+          </div>
+          <div class="d-flex flex-row align-items-center">
+            <i class="fa-solid fa-envelope"></i>
+            <p class="ms-2"><%= club.user.email %></p>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
   <% end %>
-  <p><%= club.name %></p>
-  <p><%= club.address %></p>
-  <p><%= club.description %></p>
-  <p>Numéro de téléphone : <%= club.phone_number %></p>
-  <p>Catégorie : <%= club.category %></p>
-  <p>Capacité : <%= club.capacity %></p>
-  <p>Prix : <%= club.hour_price %> €</p>
-  <%= link_to "Details of this club", club_path(club) %>
-<% end %>
-
-<%# footer %>
+</div>
