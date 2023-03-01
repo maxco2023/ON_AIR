@@ -7,6 +7,13 @@ class PagesController < ApplicationController
     else
       @clubs = Club.all
     end
+    @markers = @clubs.geocoded.map do |club|
+      {
+        lat: club.latitude,
+        lng: club.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {club: club})
+      }
+    end
   end
 
   def dashboard
