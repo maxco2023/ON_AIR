@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true
-  validates :biography, presence: true, length: { minimum: 50 }
+  validates :biography, presence: true, length: { minimum: 50, maximum: 275 }
 
   has_one_attached :photo
 end
