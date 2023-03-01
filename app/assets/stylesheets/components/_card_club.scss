@@ -38,3 +38,15 @@
     text-decoration:none;
 }
 }
+
+.sans-photo {
+  background-color: $pcolor2;
+  width: 380px;
+  height: 200px;
+  background-color: rgb(179, 179, 179);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
