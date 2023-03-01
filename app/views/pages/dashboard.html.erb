@@ -80,7 +80,7 @@
               <% else %>
                 <%= cl_image_tag("avatar-vierge_dnx941", height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
               <% end %>
-              <%= link_to "#{booking.club.user.first_name} #{booking.club.user.last_name}", user_path(booking.user) %>
+              <%= link_to "#{booking.club.user.first_name} #{booking.club.user.last_name}", user_path(booking.club.user) %>
             </div>
             <p><strong>Début :</strong> <%= booking.start_date %></p>
             <p><strong>Fin :</strong> <%= booking.end_date %></p>
