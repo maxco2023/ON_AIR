@@ -5,9 +5,11 @@
 <% end %>
 <h2><%= @user.first_name %></h2>
 <p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
-<p><%= @user.phone_number %></p>
 <p><%= @user.biography %></p>
+<% if current_user.clubs.count != 0 || @user == current_user %>
+  <p><%= @user.email %></p>
+  <p><%= @user.phone_number %></p>
+<% end %>
 <p><%= @user.social_network_url %></p>
 
 <%= link_to "Go back to my dashboard", dashboard_path %>
