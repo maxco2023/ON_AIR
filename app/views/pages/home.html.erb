@@ -1,8 +1,8 @@
 
-<div class="no-underline-on-link">
+<div class="no-underline-on-link mt-2">
   <% @clubs.each do |club| %>
     <%= link_to club_path(club) do%>
-      <div class="card-club shadow">
+      <div class="card-club shadow mt-3 mb-3">
         <% if club.photo.attached? %>
           <%= cl_image_tag(club.photo.key, height: 200, width: 380, crop: :fill) %>
         <% else %>
