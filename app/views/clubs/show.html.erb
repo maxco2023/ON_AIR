@@ -17,7 +17,7 @@
     <% if @club.photo.attached? %>
       <%= cl_image_tag(@club.photo.key, height: 200, width: 300, crop: :fill, :class=>"rounded-4 shadow") %>
     <% else %>
-      <img src="">
+      <div class="sans-photo rounded-4 shadow"><%= @club.name %></div>
     <% end %>
     <div class="d-flex flex-column flex-fill ms-4 details">
       <p><strong><%= @club.address %></strong></p>
