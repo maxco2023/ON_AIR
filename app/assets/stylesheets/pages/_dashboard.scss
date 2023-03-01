@@ -1,0 +1,12 @@
+.overflowx {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+

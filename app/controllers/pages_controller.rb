@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @clubs = Club.all
+    if params[:query].present?
+      @clubs = Club.where(name: params[:query])
+    else
+      @clubs = Club.all
+    end
   end
 
   def dashboard
