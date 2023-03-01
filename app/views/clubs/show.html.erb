@@ -8,12 +8,10 @@
 <p><%= @club.address %></p>
 <p><%= @club.phone_number %></p>
 <p><%= @club.description %></p>
-
-<%= link_to "Edit this club", edit_club_path %>
-<%= link_to "Delete this club", club_path(@club), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
-<%# Ajout %>
-<%= link_to "Ask for Booking", new_club_booking_path(@club) %>
+<% if @club.user == current_user %>
+  <%= link_to "Edit this club", edit_club_path %>
+  <%= link_to "Delete this club", club_path(@club), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
 
 <br>
 
