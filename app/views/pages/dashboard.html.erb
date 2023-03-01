@@ -1,7 +1,7 @@
 <h1>Profil</h1>
 
 <% if current_user.photo.attached? %>
-  <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag current_user.photo.key, height: 150, width: 200, :gravity=>"faces", crop: :fill %>
 <% else %>
   <img src="">
 <% end %>
@@ -9,6 +9,9 @@
 <%= link_to "Edit my profile", edit_user_registration_path %>
 
 <br>
+
+<%# MES CLUBS  MES CLUBS  MES CLUBS  MES CLUBS  MES CLUBS  MES CLUBS  MES CLUBS%>
+
 <div>
   <% if current_user.clubs.count != 0 %>
     <h2>Mes clubs</h2>
@@ -61,6 +64,8 @@
 </div>
 <br>
 
+<%# MES BOOKINGS  MES BOOKINGS  MES BOOKINGS  MES BOOKINGS  MES BOOKINGS  MES BOOKINGS  MES BOOKINGS%>
+
 <div>
   <% if current_user.bookings.count != 0 %>
     <h2>Mes bookings</h2>
@@ -74,24 +79,49 @@
   <% end %>
 </div>
 
+<%# MES BOOKINGS de mes clubs  MES BOOKINGS de mes clubs  MES BOOKINGS de mes clubs %>
+
 <div>
   <% if current_user.clubs.count != 0 %>
     <h2>Les bookings de mes clubs</h2>
-    <% current_user.clubs.each do |club| %>
-      <% club.bookings.each do |booking| %>
-      <h3><%= booking.club.name %></h3>
-      <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", user_path(booking.user) %>
-      <% if booking.user.photo.attached? %>
-        <%= cl_image_tag(booking.user.photo.key, height: 300, width: 400, crop: :fill) %>
-      <% else %>
-        <img src="">
+    <div class="overflowx pt-3 pb-3">
+      <% current_user.clubs.each do |club| %>
+        <% club.bookings.each do |booking| %>
+
+          <div class="card-booking shadow ms-3 me-3 p-2 row">
+
+            <div class="col-10">
+              <h3 class="mt-2"><%= booking.club.name %></h3>
+              <% if booking.user.photo.attached? %>
+                <%= cl_image_tag(booking.user.photo.key, height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
+              <% else %>
+                <img src="">
+              <% end %>
+              <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", user_path(booking.user) %>
+
+              <p><strong>Début :</strong> <%= booking.start_date %></p>
+              <p><strong>Fin :</strong> <%= booking.end_date %></p>
+            </div>
+
+
+
+            <div class="col-2 d-flex flex-column align-items-center justify-content-between pb-2">
+              <%= link_to booking_accepted_path(booking) do%>
+                <% if booking.accepted %>
+                  <i class="fa-solid fa-check validated"></i>
+                <% else %>
+                  <i class="fa-solid fa-check unvalidated"></i>
+                <% end %>
+              <% end %>
+              <%= link_to bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            </div>
+
+          </div>
+
+        <% end %>
       <% end %>
-      <p>Début de la réservation : <%= booking.start_date %></p>
-      <p>Fin de la réservation : <%= booking.end_date %></p>
-      <p>Statut de la réservation : <%= booking.accepted %></p>
-      <%= link_to "Delete", bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%= link_to "Accept this booking", booking_accepted_path(booking) %>
-      <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
