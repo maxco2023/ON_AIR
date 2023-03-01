@@ -1,7 +1,7 @@
 <h1>Profil</h1>
 
 <% if current_user.photo.attached? %>
-  <%= cl_image_tag current_user.photo.key, height: 300, width: 400, :gravity=>"faces", crop: :fill %>
+  <%= cl_image_tag current_user.photo.key, height: 150, width: 200, :gravity=>"faces", crop: :fill %>
 <% else %>
   <img src="">
 <% end %>
@@ -91,21 +91,21 @@
           <div class="card-booking shadow ms-3 me-3 p-2 row">
 
             <div class="col-10">
-              <h3><%= booking.club.name %></h3>
+              <h3 class="mt-2"><%= booking.club.name %></h3>
               <% if booking.user.photo.attached? %>
-                <%= cl_image_tag(booking.user.photo.key, height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle") %>
+                <%= cl_image_tag(booking.user.photo.key, height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
               <% else %>
                 <img src="">
               <% end %>
               <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", user_path(booking.user) %>
 
-              <p>Début : <%= booking.start_date %></p>
-              <p>Fin : <%= booking.end_date %></p>
+              <p><strong>Début :</strong> <%= booking.start_date %></p>
+              <p><strong>Fin :</strong> <%= booking.end_date %></p>
             </div>
 
 
 
-            <div class="col-2 d-flex flex-column align-items-center justify-content-between">
+            <div class="col-2 d-flex flex-column align-items-center justify-content-between pb-2">
               <%= link_to booking_accepted_path(booking) do%>
                 <% if booking.accepted %>
                   <i class="fa-solid fa-check validated"></i>
