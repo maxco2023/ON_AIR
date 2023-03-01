@@ -84,11 +84,11 @@
 <div>
   <% if current_user.clubs.count != 0 %>
     <h2>Les bookings de mes clubs</h2>
-    <div class="overflowx">
+    <div class="overflowx pt-3 pb-3">
       <% current_user.clubs.each do |club| %>
         <% club.bookings.each do |booking| %>
 
-          <div class="card-booking shadow p-2 row">
+          <div class="card-booking shadow ms-3 me-3 p-2 row">
 
             <div class="col-10">
               <h3><%= booking.club.name %></h3>
@@ -119,8 +119,6 @@
             </div>
 
           </div>
-
-        <p>Statut de la réservation : <%= booking.accepted %></p>
 
         <% end %>
       <% end %>
