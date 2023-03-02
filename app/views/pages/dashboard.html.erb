@@ -33,7 +33,7 @@
     <p><% if current_user.bookings.count != 0 %>
       <div class="msg-alt">Mes représentations acceptées</div>
         <div class="overflowx pt-3 pb-3">
-          <% @bookings.where(status: "accepted").each do |booking| %>
+          <% @bookings.where(status: "validated").each do |booking| %>
 
             <%# RENDER %>
             <%= render "cardbookings", booking: booking %>

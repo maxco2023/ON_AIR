@@ -13,11 +13,9 @@
     <p><strong>Fin :</strong> <%= booking.end_date %></p>
   </div>
   <div class="col-2 d-flex flex-column align-items-center justify-content-between pb-2">
-      <% if booking.accepted %>
-        <i class="fa-solid fa-check validated"></i>
-      <% else %>
-        <i class="fa-solid fa-check unvalidated"></i>
-      <% end %>
+    <%= link_to booking_validated_path(booking) do %>
+      <i class="fa-solid fa-check validated"></i>
+    <% end %>
     <%= link_to booking_declined_path(booking) do%>
       <i class="fa-solid fa-trash"></i>
     <% end %>
