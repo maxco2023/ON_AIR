@@ -20,5 +20,6 @@ class PagesController < ApplicationController
     # pas besoin de la première ligne ? mettre plutôt juste @club.user = current_user ?
     @clubs = Club.where(user: current_user)
     @bookings = Booking.where(user: current_user)
+    @booking = Booking.new
   end
 end
