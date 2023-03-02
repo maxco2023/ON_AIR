@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="p-3">
+    <div class="p-3 pb-0">
       <div class="m-0 p-0" data-controller="dynamic-booking-price" data-dynamic-booking-price-price-value="<%= @club.hour_price %>">
         <div data-controller="flatpickr" data-flatpickr-dates-value="<%= @club.flatpickr_booked_dates_object %>">
           <%= render "calendar", club: @club, booking: @booking %>
