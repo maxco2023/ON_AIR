@@ -27,25 +27,30 @@
   </div>
 </div>
 
-<div class="d-flex flex-row align-items-center justify-content-evenly">
+<div data-controller="flatpickr" data-flatpickr-dates-value="<%= @club.flatpickr_booked_dates_object %>">
+  <%= render "calendar", club: @club, booking: @booking %>
+</div>
+
+
+<%# <div class="d-flex flex-row align-items-center justify-content-evenly">
   <div class="calendar-car">
     <%= month_calendar(attribute: :start_date, end_attribute: :end_date, events: @club.bookings) do |date, bookings| %>
-        <%= date.day %>
+        <%# <%= date.day %>
 
-        <% bookings.each do |booking| %>
-          <div>
+        <%# <% bookings.each do |booking| %>
+          <%# <div>
             <%= "" %>
-          </div>
-        <% end %>
-    <% end %>
-  </div>
+          <%# </div> %>
+        <%# <% end %>
+    <%# <% end %>
+  <%# </div> %>
 
-  <div>
-    <h1>Nouveau booking:</h1>
-    <%= simple_form_for [@club, @booking], data: { controller: 'flatpickr' } do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-</div>
+  <%# <div> %>
+    <%# <h1>Nouveau booking:</h1> %>
+    <%# <%= simple_form_for [@club, @booking], data: { controller: 'flatpickr' } do |f| %>
+      <%# <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+      <%# <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+      <%# <%= f.submit %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
