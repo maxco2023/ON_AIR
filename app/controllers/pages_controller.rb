@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      @clubs = Club.where(name: params[:query])
+      @clubs = Club.search_by_name_and_address_and_category(params[:query])
     else
       @clubs = Club.all
     end
