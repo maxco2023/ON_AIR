@@ -16,6 +16,9 @@
     <%= link_to booking_validated_path(booking) do %>
       <i class="fa-solid fa-check validated"></i>
     <% end %>
+    <%= link_to booking_cancelled_path(booking) do %>
+      <i class="fa-solid fa-xmark"></i>
+    <% end %>
     <%= link_to booking_declined_path(booking) do%>
       <i class="fa-solid fa-trash"></i>
     <% end %>
