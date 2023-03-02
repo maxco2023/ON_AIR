@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      @clubs = Club.where("name ILIKE ?", "%#{params[:query]}%")
+      @clubs = Club.search_by_name_and_address_and_category(params[:query])
     else
       @clubs = Club.all
     end
@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       {
         lat: club.latitude,
         lng: club.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {club: club})
+        info_window_html: render_to_string(partial: "info_window", locals: {club: club}),
       }
     end
   end

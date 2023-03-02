@@ -1,2 +1,6 @@
-<h2><%= club.name %></h2>
-<p><%= club.address %></p>
+<%= link_to club_path(club), class:"marker-link" do %>
+  <div>
+    <h2><%= club.name %></h2>
+    <p><%= club.address %></p>
+  </div>
+<% end %>
