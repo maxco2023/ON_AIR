@@ -21,13 +21,13 @@ export default class extends Controller {
 
     console.log(this.map)
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, marker: {color: 'rgba(145, 181, 186)'}, mapboxgl: mapboxgl, placeholder: 'Rechercher une adresse'}))
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({color: 'rgba(255, 192, 203)'})
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)

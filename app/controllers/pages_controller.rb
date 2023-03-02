@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       {
         lat: club.latitude,
         lng: club.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {club: club})
+        info_window_html: render_to_string(partial: "info_window", locals: {club: club}),
       }
     end
   end
