@@ -2,7 +2,7 @@ user1 = User.new(
   first_name: "Julie",
   last_name: "Brunet",
   phone_number: "06 75 64 73 89",
-  biography: "Après des études et diverses expériences en finance d'entreprise, je souhaite désormais apprendre à coder pour devenir développeuse web en freelance.",
+  biography: "Pendant mon adolescence, je suis des cours au théâtre de la Graine puis je parfais son apprentissage à l’atelier d’improvisation « Les Thélémites ». A 20 ans, je quitte le sud pour m’installer à Paris afin de compléter ma formation de comédienne au cours Florent.",
   email: "julieb@lewagon.org",
   password: "123456"
 )
@@ -10,7 +10,7 @@ user1.save!
 
 club1 = Club.new(
   name: "Golden Comedy Club",
-  address: "11 rue blabla Paris",
+  address: "4 Rue de la Huchette, 75005 Paris",
   description: "Ne dit-on pas que rire permet d'augmenter l'espérance de vie ? Deviens immortel grâce au Golden Comedy Club ! Prépare tes zygomatiques car le George Café te réserve une soirée unique avec le meilleur de la scène stand-up parisienne. Attends-toi à une programmation en or 100% secrète qui change à chaque session avec 4 à 6 humoristes de toutes les générations (les stars d'hier, d'aujourd'hui et de demain), dans une ambiance fun, délirante, conviviale et décontractée.",
   phone_number: "06 21 34 51 01",
   capacity: 30,
@@ -24,7 +24,7 @@ user2 = User.new(
   first_name: "Maxime",
   last_name: "Coquerelle",
   phone_number: "06 75 64 83 89",
-  biography: "I was business developper for a big company, and I've always wanted to learn to code, to be able to develop web site and web app, so I decided to attend the Bootcamp. After few years of experience I'd like to become a freelance.",
+  biography: "C'est à l'adolescence que je découvre une passion pour le théâtre et la comédie. Je joue dans plusieurs courts-métrages de Christophe Coelho, dont Pas de cerises, plein de ghettos en 2005. Cet attrait pour le jeu me pousse à faire des études dans les arts du spectacle avant de partir tenter sa chance à Paris. Adepte du stand-up, j'écume les scènes des cafés-théâtres de la capitale.",
   email: "maximec@lewagon.org",
   password: "123456"
 )
@@ -46,7 +46,7 @@ user3 = User.new(
   first_name: "Amélie",
   last_name: "Berthier",
   phone_number: "06 15 64 83 89",
-  biography: "Récemment diplômée d'un Master of Science en Aromatique Alimentaire, je ne trouvais pas d'emploi dans ce domaine. J'ai alors décidé de rebondir rapidement avant qu'il ne soit trop tard. Etant entourée de développeurs depuis plusieurs années, Le Wagon est vite devenu pour moi une opportunité de reconversion rapide.",
+  biography: "J'ai toujours fait mon show, mais devant mes clients. Relations Publiques pendant 10 ans, je décide de tout lâcher pour enfin être moi-même et partager mon univers mais cette fois en montant sur scène.",
   email: "amélieb@lewagon.org",
   password: "123456"
 )
@@ -56,7 +56,7 @@ user4 = User.new(
   first_name: "Bastien",
   last_name: "Lafont",
   phone_number: "06 15 34 83 89",
-  biography: "Ingénieur généraliste, j'ai occupé pendant plus de 6 ans le poste de chef de projet dans une PME en forte croissance opérant dans les secteurs du nucléaire et de l’industrie. Aujourd’hui, je souhaite rejoindre un nouveau domaine d’activité qui m’a toujours attiré : la tech. Après le Wagon et quelques années d’expérience en entreprise, j’envisage deux possibilités : évoluer vers de la gestion de projet ou Freelance full-stack.",
+  biography: "Un peu cynique, un peu alcoolique, un peu geek, un peu con aussi parfois, finalement c’est juste l’histoire d’un trentenaire normal qui a décidé de monter à Paris parce qu’il savait pas trop quoi faire de sa vie, et qui a décidé de répondre aux trop nombreuses questions qui se posaient par des blagues. Le seul truc que je sait vraiment faire finalement.",
   email: "bastienl@lewagon.org",
   password: "123456"
 )
