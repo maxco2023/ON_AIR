@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_club, only: %i[new create]
-  before_action :set_booking, only: %i[destroy accepted]
+  before_action :set_booking, only: %i[destroy accepted validated cancelled declined]
 
   def new
     @booking = Booking.new
@@ -28,6 +28,27 @@ class BookingsController < ApplicationController
   def accepted
     authorize @booking
     @booking.accepted = true
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def validated
+    authorize @booking
+    @booking.validated!
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def cancelled
+    authorize @booking
+    @booking.cancelled!
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def declined
+    authorize @booking
+    @booking.declined!
     @booking.save
     redirect_to dashboard_path
   end

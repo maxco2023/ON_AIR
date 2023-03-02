@@ -10,13 +10,11 @@ Rails.application.routes.draw do
   end
   get 'bookings/:id', to: 'bookings#accepted', as: :booking_accepted
 
-  get 'bookings/:id', to: 'bookings#validated', as: :booking_validated
-  get 'bookings/:id', to: 'bookings#cancelled', as: :booking_cancelled
-  get 'bookings/:id', to: 'bookings#declined', as: :booking_declined
+  get 'bookings/:id/validated', to: 'bookings#validated', as: :booking_validated
+  get 'bookings/:id/cancelled', to: 'bookings#cancelled', as: :booking_cancelled
+  get 'bookings/:id/declined', to: 'bookings#declined', as: :booking_declined
 
   delete 'bookings/:id', to: 'bookings#destroy', as: :bookings_delete
   get 'dashboard', to: 'pages#dashboard'
   get 'users/:id', to: 'users#show', as: :user
 end
-
-
