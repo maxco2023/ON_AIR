@@ -1,3 +1,15 @@
+User.all.each do |user|
+  user.photo.purge
+end
+
+Club.all.each do |club|
+  club.photo.purge
+end
+
+User.destroy_all
+Club.destroy_all
+Booking.destroy_all
+
 user1 = User.new(
   first_name: "Julie",
   last_name: "Brunet",
@@ -6,6 +18,12 @@ user1 = User.new(
   email: "julieb@lewagon.org",
   password: "123456"
 )
+user1.photo.attach(
+  io: File.open('public/images/julie.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+
 user1.save!
 
 club1 = Club.new(
@@ -18,6 +36,11 @@ club1 = Club.new(
   hour_price: 12,
   user_id: user1.id
 )
+club1.photo.attach(
+  io: File.open('public/images/bar1.jpeg'),
+  filename: 'anyname.jpeg', # use the extension of the attached file here
+  content_type: 'image/jpeg' # use the mime type of the attached file here
+)
 club1.save!
 
 user2 = User.new(
@@ -27,6 +50,11 @@ user2 = User.new(
   biography: "C'est à l'adolescence que je découvre une passion pour le théâtre et la comédie. Je joue dans plusieurs courts-métrages dont Pas de cerises. Cet attrait pour le jeu me pousse à faire des études dans les arts du spectacle avant de partir tenter sa chance à Paris.",
   email: "maximec@lewagon.org",
   password: "123456"
+)
+user2.photo.attach(
+  io: File.open('public/images/max.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here
+  content_type: 'image/jpg' # use the mime type of the attached file here
 )
 user2.save!
 
@@ -40,6 +68,11 @@ club2 = Club.new(
   hour_price: 18,
   user_id: user2.id
 )
+club2.photo.attach(
+  io: File.open('public/images/paname.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
 club2.save!
 
 user3 = User.new(
@@ -50,6 +83,11 @@ user3 = User.new(
   email: "amélieb@lewagon.org",
   password: "123456"
 )
+user3.photo.attach(
+  io: File.open('public/images/amelie.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
 user3.save!
 
 user4 = User.new(
@@ -59,6 +97,11 @@ user4 = User.new(
   biography: "Finalement c’est juste l’histoire d’un trentenaire normal qui a décidé de monter à Paris parce qu’il savait pas trop quoi faire de sa vie, et qui a décidé de répondre aux trop nombreuses questions qui se posaient par des blagues.",
   email: "bastienl@lewagon.org",
   password: "123456"
+)
+user4.photo.attach(
+  io: File.open('public/images/bastien.jpeg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here
+  content_type: 'image/jpg' # use the mime type of the attached file here
 )
 user4.save!
 
@@ -78,7 +121,6 @@ booking2 = Booking.new(
 )
 booking2.save!
 
-
 userl = User.new(
   first_name: "Georges",
   last_name: "Moustaki",
@@ -86,6 +128,11 @@ userl = User.new(
   biography: "Même si je parle encore le français avec un accent de touriste allemand, être un étranger n'est plus une excuse. Je dois maintenant faire face à toutes les problématiques d'un quarantenaire franco-juif-new-yorkais pacsé avec 3 enfants en bas âge.",
   email: "georgesm@lewagon.org",
   password: "123456"
+)
+userl.photo.attach(
+  io: File.open('public/images/georges.jpeg'),
+  filename: 'anyname.jpeg', # use the extension of the attached file here
+  content_type: 'image/jpeg' # use the mime type of the attached file here
 )
 userl.save!
 
@@ -99,6 +146,11 @@ clubl1 = Club.new(
   hour_price: 20,
   user_id: userl.id
 )
+clubl1.photo.attach(
+  io: File.open('public/images/fridge.png'),
+  filename: 'anyname.png', # use the extension of the attached file here
+  content_type: 'image/png' # use the mime type of the attached file here
+)
 clubl1.save!
 
 clubl2 = Club.new(
@@ -110,6 +162,11 @@ clubl2 = Club.new(
   category: "Comedy Club",
   hour_price: 18,
   user_id: userl.id
+)
+clubl2.photo.attach(
+  io: File.open('public/images/jamel.png'),
+  filename: 'anyname.png', # use the extension of the attached file here
+  content_type: 'image/png' # use the mime type of the attached file here
 )
 clubl2.save!
 
@@ -123,6 +180,11 @@ clubl3 = Club.new(
   hour_price: 14,
   user_id: userl.id
 )
+clubl3.photo.attach(
+  io: File.open('public/images/scene.png'),
+  filename: 'anyname.png', # use the extension of the attached file here
+  content_type: 'image/png' # use the mime type of the attached file here
+)
 clubl3.save!
 
 clubl4 = Club.new(
@@ -134,6 +196,11 @@ clubl4 = Club.new(
   category: "Café",
   hour_price: 12,
   user_id: userl.id
+)
+clubl4.photo.attach(
+  io: File.open('public/images/bar2.png'),
+  filename: 'anyname.png', # use the extension of the attached file here
+  content_type: 'image/png' # use the mime type of the attached file here
 )
 clubl4.save!
 
@@ -147,6 +214,11 @@ clubl5 = Club.new(
   hour_price: 15,
   user_id: userl.id
 )
+clubl5.photo.attach(
+  io: File.open('public/images/joke.png'),
+  filename: 'anyname.png', # use the extension of the attached file here
+  content_type: 'image/png' # use the mime type of the attached file here
+)
 clubl5.save!
 
 clubl6 = Club.new(
@@ -158,5 +230,10 @@ clubl6 = Club.new(
   category: "Comedy Club",
   hour_price: 16,
   user_id: userl.id
+)
+clubl6.photo.attach(
+  io: File.open('public/images/resto1.jpeg'),
+  filename: 'anyname.jpeg', # use the extension of the attached file here
+  content_type: 'image/jpeg' # use the mime type of the attached file here
 )
 clubl6.save!
