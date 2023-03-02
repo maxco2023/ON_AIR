@@ -17,4 +17,16 @@ class BookingPolicy < ApplicationPolicy
   def accepted?
     record.club.user == user
   end
+
+  def validated?
+    record.club.user == user
+  end
+
+  def cancelled?
+    record.club.user == user
+  end
+
+  def declined?
+    record.club.user == user
+  end
 end

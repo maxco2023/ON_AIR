@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  enum status: %i[created validated cancelled declined]
+
   belongs_to :club
   belongs_to :user
 
