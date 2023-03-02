@@ -10,5 +10,80 @@
 }
 
 .container-forced {
-  width: 300px;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: relative
+}
+
+.nav .nav-item {
+  display: inline-block
+}
+
+.nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  color: #6c757d
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav .nav-link {
+      transition: none
+  }
+}
+
+.nav .nav-link.active {
+  color: #000
+}
+
+.nav .lavalamp-object {
+  display: none;
+  z-index: 1
+}
+
+.nav-pills {
+  display: inline-flex;
+  background: #dee2e6;
+  border-radius: 0.25rem;
+  padding: 2px
+}
+
+.nav-pills .nav-link {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #999
+}
+
+.nav-pills .nav-link.active {
+  background: transparent
+}
+
+.nav-pills .lavalamp-object {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 0.25rem
+}
+
+.nav-tabs .nav-link {
+  border: 0
+}
+
+.nav-tabs .nav-link.active,.nav-tabs .nav-item.show .nav-link {
+  background-color: transparent
+}
+
+.nav-tabs .lavalamp-object {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-bottom: 2px solid #E60F05;
+  border-radius: 0
 }
