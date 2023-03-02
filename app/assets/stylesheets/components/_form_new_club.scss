@@ -1,0 +1,55 @@
+.form-new-club input {
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 30px !important;
+  width: 500px;
+  vertical-align: baseline;
+  height: 38px !important;
+}
+
+.form-new-club{
+  width: 500px;
+}
+
+#club_description {
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 30px !important;
+  width: 500px;
+}
+
+.submit-form {
+  margin-bottom: 20px;
+  height: 40px !important;
+  margin-top: 20px;
+  width: 150px !important;
+  vertical-align: baseline;
+}
+
+.form-new-club .mapboxgl-ctrl-geocoder{
+  background-color: white !important;
+  width: 500px !important;
+  height: 30px !important;
+  border-radius: 30px !important;
+  box-shadow: 2px 2px 3px #c4c4c4 !important;
+  outline: none !important;
+}
+// Button
+
+.submit-form {
+  display: flex;
+  align-items: center;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.submit-form:hover {
+  opacity: 1;
+  border: 1px solid #3c3b3b;
+  background-color: #3c3b3b !important;
+  color:white;
+  transition: background 0.5s ease;
+}
