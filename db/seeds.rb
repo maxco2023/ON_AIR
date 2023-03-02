@@ -11,7 +11,7 @@ user1.save!
 club1 = Club.new(
   name: "Golden Comedy Club",
   address: "4 Rue de la Huchette, 75005 Paris",
-  description: "Ne dit-on pas que rire permet d'augmenter l'espérance de vie ? Deviens immortel grâce au Golden Comedy Club ! Prépare tes zygomatiques car le George Café te réserve une soirée unique avec le meilleur de la scène stand-up parisienne. Attends-toi à une programmation en or 100% secrète qui change à chaque session avec 4 à 6 humoristes de toutes les générations (les stars d'hier, d'aujourd'hui et de demain), dans une ambiance fun, délirante, conviviale et décontractée.",
+  description: "Ne dit-on pas que rire permet d'augmenter l'espérance de vie ? Deviens immortel grâce au Golden Comedy Club ! Prépare tes zygomatiques car le George Café te réserve une soirée unique avec le meilleur de la scène stand-up parisienne.",
   phone_number: "06 21 34 51 01",
   capacity: 30,
   category: "Bar",
@@ -24,7 +24,7 @@ user2 = User.new(
   first_name: "Maxime",
   last_name: "Coquerelle",
   phone_number: "06 75 64 83 89",
-  biography: "C'est à l'adolescence que je découvre une passion pour le théâtre et la comédie. Je joue dans plusieurs courts-métrages de Christophe Coelho, dont Pas de cerises, plein de ghettos en 2005. Cet attrait pour le jeu me pousse à faire des études dans les arts du spectacle avant de partir tenter sa chance à Paris. Adepte du stand-up, j'écume les scènes des cafés-théâtres de la capitale.",
+  biography: "C'est à l'adolescence que je découvre une passion pour le théâtre et la comédie. Je joue dans plusieurs courts-métrages dont Pas de cerises. Cet attrait pour le jeu me pousse à faire des études dans les arts du spectacle avant de partir tenter sa chance à Paris.",
   email: "maximec@lewagon.org",
   password: "123456"
 )
@@ -56,7 +56,7 @@ user4 = User.new(
   first_name: "Bastien",
   last_name: "Lafont",
   phone_number: "06 15 34 83 89",
-  biography: "Un peu cynique, un peu alcoolique, un peu geek, un peu con aussi parfois, finalement c’est juste l’histoire d’un trentenaire normal qui a décidé de monter à Paris parce qu’il savait pas trop quoi faire de sa vie, et qui a décidé de répondre aux trop nombreuses questions qui se posaient par des blagues. Le seul truc que je sait vraiment faire finalement.",
+  biography: "Finalement c’est juste l’histoire d’un trentenaire normal qui a décidé de monter à Paris parce qu’il savait pas trop quoi faire de sa vie, et qui a décidé de répondre aux trop nombreuses questions qui se posaient par des blagues.",
   email: "bastienl@lewagon.org",
   password: "123456"
 )
@@ -83,7 +83,7 @@ userl = User.new(
   first_name: "Georges",
   last_name: "Moustaki",
   phone_number: "07 25 46 83 82",
-  biography: "Même si je parle encore le français avec un accent de touriste allemand, être un étranger n'est plus une excuse. Je dois maintenant faire face à toutes les problématiques d'un quarantenaire franco-juif-new-yorkais pacsé avec 3 enfants en bas âge. Comment réagir quand ta fille corrige ton français, quand ta nana reçoit une banane en pleine gueule, quand ta femme de ménage trouve ta maison dégueulasse, quand t'es une cigale perdue dans un monde de fourmis ? Les choses de la vie...",
+  biography: "Même si je parle encore le français avec un accent de touriste allemand, être un étranger n'est plus une excuse. Je dois maintenant faire face à toutes les problématiques d'un quarantenaire franco-juif-new-yorkais pacsé avec 3 enfants en bas âge.",
   email: "georgesm@lewagon.org",
   password: "123456"
 )
@@ -116,7 +116,7 @@ clubl2.save!
 clubl3 = Club.new(
   name: "La Scène Barbès",
   address: "11 Rue d'Oran, 75018 Paris",
-  description: "La Scène Barbès est une salle de spectacles principalement axée sur le stand-up. Vous pourrez aussi y découvrir des scènes musicales le week-end. La programmation du lieu est à découvrir sur notre site. Dans un décor et une ambiance inspirée des comedy club New-Yorkais, vous découvrirez 5 humoristes qui se succèderont pour une heure de show pour le plateau des artistes confirmés.",
+  description: "La Scène Barbès est une salle de spectacles principalement axée sur le stand-up. Vous pourrez aussi y découvrir des scènes musicales le week-end.",
   phone_number: "01 42 51 14 80",
   capacity: 30,
   category: "Comedy Club",
@@ -140,7 +140,7 @@ clubl4.save!
 clubl5 = Club.new(
   name: "The Junk",
   address: "37 R. Quincampoix, 75004 Paris",
-  description: "The Joke est un concept qui a été pensé par des amoureux du Stand up. Du bar jusqu’à la salle de spectacle au fond, nous combinons un environnement sobre et chic parsemé d’une dose d’humour pour vous donner la meilleure expérience possible. Rien de mieux qu’un bon verre avec un spectacle",
+  description: "The Joke est un concept qui a été pensé par des amoureux du Stand up. Du bar jusqu’à la salle de spectacle au fond, nous combinons un environnement sobre et chic.",
   phone_number: "01 88 40 03 40",
   capacity: 30,
   category: "Comedy Club",
