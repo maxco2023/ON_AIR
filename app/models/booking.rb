@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  enum status: %i[created validated cancelled declined]
+
   belongs_to :club
   belongs_to :user
 
@@ -8,7 +10,7 @@ class Booking < ApplicationRecord
 
   def start_date_cannot_be_in_the_past
     if start_date.present? && start_date < Date.today
-      errors.add(:start_date, "can't be in the past")
+      errors.add(:start_date, "La date de réservation ne peut pas être antérieure à aujourd'hui")
     end
   end
 
