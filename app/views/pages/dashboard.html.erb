@@ -166,3 +166,49 @@
     </div>
 
 </div>
+
+<%# TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  %>
+
+<div>
+  <% if current_user.clubs.count != 0 %>
+    <h2>Les bookings de mes clubs</h2>
+    <div class="overflowx pt-3 pb-3">
+      <% current_user.clubs.each do |club| %>
+        <% club.bookings.each do |booking| %>
+          <div class="card-booking shadow ms-3 me-3 p-2 row">
+            <div class="col-10">
+              <h3 class="mt-2 text-truncate"><%= booking.club.name %></h3>
+              <div class="container-forced">
+                <% if booking.user.photo.attached? %>
+                  <%= cl_image_tag(booking.user.photo.key, height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
+                <% else %>
+                  <%= cl_image_tag("avatar-vierge_dnx941", height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
+                <% end %>
+                <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", user_path(booking.user) %>
+              </div>
+              <p><strong>Début :</strong> <%= booking.start_date %></p>
+              <p><strong>Fin :</strong> <%= booking.end_date %></p>
+            </div>
+            <div class="col-2 d-flex flex-column align-items-center justify-content-between pb-2">
+              <%= link_to booking_accepted_path(booking) do%>
+                <% if booking.accepted %>
+                  <i class="fa-solid fa-check validated"></i>
+                <% else %>
+                  <i class="fa-solid fa-check unvalidated"></i>
+                <% end %>
+              <% end %>
+              <%= link_to bookings_delete_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            </div>
+          </div>
+          <%= link_to "validated", booking_validated_path(booking) %>
+          <%= link_to "cancelled", booking_cancelled_path(booking) %>
+          <%= link_to "declined", booking_declined_path(booking) %>
+
+          <%= booking.status %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
