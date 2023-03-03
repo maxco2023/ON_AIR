@@ -2,6 +2,11 @@
   width:1000px;
   margin: 0 auto;
   background-color: $pcolor1;
+  color: $pcolor3;
+
+  h1 {
+    color:pink;
+  }
 
   .revenus-position {
     position: relative;
