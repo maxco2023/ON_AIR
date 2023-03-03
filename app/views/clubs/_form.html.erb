@@ -3,7 +3,7 @@
     <%= simple_form_for(club) do |f| %>
       <%= f.input :name, :label => "Nom :" %>
       <%= f.input :photo, :label => "Photo :", as: :file, class:"picture" %>
-      <%= f.input :address, :label => "Adresse :", placeholder: "Rechercher une adresse", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+      <%= f.input :address, :label => "Adresse :", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
       wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
       <%= f.input :phone_number, :label => "Numéro de téléphone :" %>
       <%= f.input :category, :label => "Catégorie :" %>
