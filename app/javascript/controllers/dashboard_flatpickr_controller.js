@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
-// Connects to data-controller="flatpickr"
+// Connects to data-controller="dashboard-flatpickr"
 export default class extends Controller {
-  static targets = [ 'startDateInput', 'endDateInput' ]
+  static targets = ['startDateInput', 'endDateInput']
   static values = { dates: Object }
 
   connect() {
@@ -16,17 +16,24 @@ export default class extends Controller {
   }
 
   #options() {
+    const now = new Date();
+
     return {
       ...this.#parsedBookedDates(),
       mode: 'range',
       inline: true,
-      disable : [ { from: "2023-03-06", to: "2023-03-08"} ],
       minDate: new Date(),
-      "plugins": [new rangePlugin({ input: this.endDateInputTarget})]
+      "plugins": [new rangePlugin({ input: this.endDateInputTarget })],
+      onDayCreate: (Obj, dStr, fp, dayElem) => {
+        if (dayElem.dateObj < now) {
+          dayElem.classList += ' prevDay';
+        }
+      }
     }
   }
 
   #parsedBookedDates() {
     return this.datesValue
   }
+
 }
