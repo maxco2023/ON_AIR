@@ -6,7 +6,6 @@
             <div class="profile_picture"><img src=""></div>
           <% end %>
         <h1><%= @user.first_name.upcase %> | <%= @user.last_name.upcase %></h1>
-          <% if current_user.clubs.count != 0 || @user == current_user %>
             <div><i class="fa-solid fa-envelope"></i> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></div>
             <div><i class="fa-solid fa-phone"></i> | <%= @user.phone_number %></div>
             <div><a class="button button-facebook" role="button" href="(<% @user.social_network_url %>)" target="_blank"><span class="text">Mes réseaux sociaux</span><span>Mes réseaux sociaux</span></a></div>
@@ -17,6 +16,15 @@
 	      <h2> Biographie</h2>
         <div class="card-product">
           <div class="biography"><%= @user.biography %></div>
+        </div>
+      </div>
+
+
+      <div class="card-white h-100">
+        <div class="card-product h-100">
+          <iframe id="ytplayer" type="text/html" width="550" height="360"
+            src="https://www.youtube.com/embed/K-oIyXvLUeg"
+            frameborder="0"/>
         </div>
       </div>
 
