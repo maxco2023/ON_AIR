@@ -36,5 +36,4 @@ export default class extends Controller {
     return this.datesValue
   }
 
-
 }
