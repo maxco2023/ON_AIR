@@ -2,6 +2,19 @@
   width:1000px;
   margin: 0 auto;
   background-color: $pcolor1;
+  color: $pcolor3;
+
+  h1, h2 {
+    color:rgb(248, 105, 129);
+  }
+
+  i {
+    color:rgb(248, 105, 129);
+  }
+
+  strong {
+    color:rgb(248, 105, 129);
+  }
 
   .revenus-position {
     position: relative;
@@ -13,3 +26,4 @@
   .hauteur {
   }
 }
+
