@@ -25,7 +25,7 @@
 
 
     <%# MES BOOKINGS ACCEPTEES %>
-  <div class="tab-pane fade" id="bookings">
+  <div class="tab-pane active" id="bookings">
     <%= form_with url: dashboard_path, html: { data: { controller: 'flatpickr', flatpickr_dates_value: current_user.flatpickr_booked_dates_object } }  do |f| %>
       <%= f.date_field :start_date, as: :string, label: false, class: 'd-none', data: { flatpickr_target: 'startDateInput', dynamic_booking_price_target: 'startDateInput', action: 'change->dynamic-booking-price#updatePrice'} %>
       <%= f.date_field :end_date, as: :string, label: false, class: 'd-none', data: { flatpickr_target: 'endDateInput', dynamic_booking_price_target: 'endDateInput', action: 'change->dynamic-booking-price#updatePrice' } %>
