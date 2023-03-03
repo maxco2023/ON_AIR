@@ -1,4 +1,7 @@
 .map-style {
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px lightgrey;
 
   .mapboxgl-popup {
     max-width: 200px;
@@ -24,12 +27,6 @@
     color: #606060;
     margin: 10px !important;
     }
-
-  .map-style {
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px lightgrey;
-  }
 
   .mapboxgl-popup-close-button {
     margin: 10px;

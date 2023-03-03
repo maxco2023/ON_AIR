@@ -18,7 +18,7 @@
 .project-name {
   font-weight: bold;
   padding: 5px;
-  border: 2px solid pink;
+  border: 2px solid rgb(248, 105, 129);
   border-radius: 20px;
   margin: 0;
   color: #606060;
@@ -42,10 +42,12 @@
 }
 
 .form-control {
-  width: 300px;
-  height: 30px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 3px rgb(196, 196, 196)
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 30px !important;
+  width: 500px;
+  vertical-align: baseline;
+  height: 38px !important;
+  box-shadow: 1px 1px 1px lightgrey;
 }
 
 .search-icon {
@@ -53,5 +55,5 @@
 }
 
 .avatar {
-  width: 45px;
+  box-shadow: 1px 1px 1px grey;
 }

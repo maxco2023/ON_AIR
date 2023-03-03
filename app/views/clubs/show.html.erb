@@ -31,7 +31,7 @@
   <div data-controller="flatpickr" data-flatpickr-dates-value="<%= @club.flatpickr_booked_dates_object %>">
     <%= render "calendar", club: @club, booking: @booking %>
   </div>
-  <p>Total price: <span data-dynamic-booking-price-target="priceHolder"><%= @club.hour_price.round %></span> €</p>
+  <p>Revenus : <span data-dynamic-booking-price-target="priceHolder"><%= @club.hour_price.round %></span> €</p>
 </div>
 
 
