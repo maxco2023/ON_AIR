@@ -13,6 +13,9 @@ application.register("dynamic-booking-price", DynamicBookingPriceController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
+import DashboardFlatpickrController from "./dashboard_flatpickr_controller"
+application.register("dashboard-flatpickr", DashboardFlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

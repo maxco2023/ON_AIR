@@ -35,4 +35,5 @@ export default class extends Controller {
   #parsedBookedDates() {
     return this.datesValue
   }
+
 }

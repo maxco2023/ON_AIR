@@ -1,0 +1,26 @@
+<div class="card-booking shadow ms-3 me-3 p-2 row <%= booking.status %>">
+  <div class="col-10">
+    <h3 class="mt-2 text-truncate"><%= booking.club.name %></h3>
+    <div class="container-forced">
+      <% if booking.club.user.photo.attached? %>
+        <%= cl_image_tag(booking.club.user.photo.key, height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
+      <% else %>
+        <%= cl_image_tag("avatar-vierge_dnx941", height: 45, width: 45,:gravity=>"faces", crop: :fill, :class=>"rounded-circle ms-1 me-2 mb-3 mt-2") %>
+      <% end %>
+      <%= link_to "#{booking.club.user.first_name}", user_path(booking.club.user) %>
+    </div>
+    <div class="d-flex flex-row justify-content-between me-3"><p><strong>Début :</strong> </p><p><%= booking.start_date.strftime("%d/%m/%Y") %></p></div>
+    <div class="d-flex flex-row justify-content-between me-3"><p><strong>Fin :</strong> </p><p> <%= booking.end_date.strftime("%d/%m/%Y") %></p></div>
+  </div>
+  <div class="col-2 d-flex flex-column align-items-center justify-content-between p-2">
+    <%= link_to booking_validated_path(booking) do %>
+      <i class="fa-solid fa-check icones <%= "display-none" if current_user != booking.club.user%>"></i>
+    <% end %>
+    <%= link_to booking_cancelled_path(booking) do %>
+      <i class="fa-solid fa-xmark icones"></i>
+    <% end %>
+    <%= link_to booking_declined_path(booking) do%>
+      <i class="fa-solid fa-trash <%= "display-none" if current_user != booking.club.user%>"></i>
+    <% end %>
+  </div>
+</div>

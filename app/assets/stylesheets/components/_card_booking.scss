@@ -1,5 +1,7 @@
 .card-booking {
-  width: 400px;
+  width: 230px;
+  background-color: $pcolor1;
+  border-radius: 15px;
 
   h3 {
     font-size: 20px;
@@ -23,19 +25,30 @@
     font-size: 20px;
   }
 
-  .fa-check {
-    font-size: 40px;
-    border-radius: 50%;
+  .icones {
+    color:rgb(245, 137, 155);
+    font-size:24px;
   }
 
-  .unvalidated {
-    color:grey;
-    background-color: rgba(197, 197, 197, 0.167);
+  .fa-trash {
+    color:#b1afafa4;
+    font-size:18px;
   }
 
-  .validated {
-    color:rgb(15, 165, 15);
-    background-color: rgba(197, 197, 197, 0.556);
-  }
 
+}
+
+
+.cancelled {
+  opacity: 0.4;
+}
+
+.declined {
+  opacity: 0.3;
+  background-color: rgba(255, 0, 0, 0.285);
+}
+
+
+.display-none {
+  display: none;
 }
