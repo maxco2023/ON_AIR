@@ -23,7 +23,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def cancelled?
-    record.club.user == user
+    record.club.user == user || record.user == user
   end
 
   def declined?
