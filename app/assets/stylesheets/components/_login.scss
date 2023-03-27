@@ -39,7 +39,33 @@
 
 .bottom-btn-sign-up{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 500px;
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  a:hover{
+    color: pink;
+    font-weight: bold;
+  }
+}
+
+// PWD FORGOT PAGE
+
+.container-forgot{
+  width: 600px;
+  margin: 0 auto;
+  h2{
+    margin-top: 20px;
+  }
+}
+
+
+.bottom-btn-forgot{
+  display: flex;
+  justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
   width: 500px;
