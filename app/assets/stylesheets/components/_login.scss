@@ -78,3 +78,22 @@
     font-weight: bold;
   }
 }
+
+// EIDT USER INFORMATION PAGE
+
+.container-edit{
+  width: 500px;
+  margin: 0 auto;
+  h2{
+    margin-top: 20px;
+  }
+  .form-control{
+    width: 500px !important;
+  }
+}
+
+.bottom-btn-edit{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

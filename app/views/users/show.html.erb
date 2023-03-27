@@ -1,14 +1,14 @@
      <div class="container"
      > <div class="card-white">
           <% if @user.photo.attached? %>
-            <div class="profile_picture"><%= cl_image_tag(@user.photo.key, :class => "rounded-circle") %></div>
+            <div class="profile_picture"><%= cl_image_tag @user.photo.key, :class => "rounded-circle" %></div>
           <% else %>
             <div class="profile_picture"><%= image_tag asset_path('default_avatar.png') %></div>
           <% end %>
         <h1><%= @user.first_name.upcase %> | <%= @user.last_name.upcase %></h1>
             <div><i class="fa-solid fa-envelope"></i> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></div>
             <div><i class="fa-solid fa-phone"></i> | <%= @user.phone_number %></div>
-            <div><a class="button button-facebook" role="button" href="(<% @user.social_network_url %>)" target="_blank"><span class="text">Mes réseaux sociaux</span><span>Mes réseaux sociaux</span></a></div>
+            <div><a class="button button-facebook" role="button" href="(<%= @user.social_network_url %>)" target="_blank"><span class="text">Mes réseaux sociaux</span><span>Mes réseaux sociaux</span></a></div>
       </div>
 
       <div class="card-white">
@@ -20,11 +20,11 @@
 
 
       <div class="card-white h-100">
-        <div class="card-product h-100">
+        <%# <div class="card-product h-100">
           <iframe id="ytplayer" type="text/html" width="536" height="360"
             src="https://www.youtube.com/embed/SI6Q1XZ5AVw"
             frameborder="0"/>
-        </div>
+        </div> %>
       </div>
 
 <div class="dash"><%= link_to "Go back to my dashboard", dashboard_path, class:"btn btn-ghost2" %></div>
