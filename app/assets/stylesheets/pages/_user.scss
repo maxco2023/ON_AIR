@@ -172,3 +172,21 @@ h2 {
   color:white;
   transition: background 0.5s ease;
 }
+
+.btn-ghost-edit {
+  width: 120px !important;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-edit:hover {
+  opacity: 1;
+  background-color: rgb(248, 105, 129) !important;
+  color:white;
+  transition: background 0.5s ease;
+}

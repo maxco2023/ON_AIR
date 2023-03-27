@@ -12,6 +12,19 @@
 .container-forced {
   width: 1400px;
   margin: 0 auto;
+
+}
+
+#books{
+  min-height: calc(100vh - 235px) !important;
+}
+
+#bookings{
+  min-height: calc(100vh - 227px) !important;
+}
+
+#clubs{
+  min-height: calc(100vh - 235px) !important;
 }
 
 .nav {
