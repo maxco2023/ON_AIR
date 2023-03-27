@@ -3,7 +3,7 @@
           <% if @user.photo.attached? %>
             <div class="profile_picture"><%= cl_image_tag(@user.photo.key, :class => "rounded-circle") %></div>
           <% else %>
-            <div class="profile_picture"><img src=""></div>
+            <div class="profile_picture"><%= image_tag asset_path('default_avatar.png') %></div>
           <% end %>
         <h1><%= @user.first_name.upcase %> | <%= @user.last_name.upcase %></h1>
             <div><i class="fa-solid fa-envelope"></i> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></div>
